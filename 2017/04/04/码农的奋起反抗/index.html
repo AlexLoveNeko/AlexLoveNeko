@@ -87,16 +87,21 @@
 
 
 
-<meta name="description" content="地址： https://zhangslob.github.io/">
+<meta name="description" content="码农的奋起反抗C++学习笔记(2)笔记多写一份比较好找？Alex是这么觉得的。看来要写很多分了。
+ 附上吃糖的乐芙兰殿下！=w=">
 <meta property="og:type" content="article">
-<meta property="og:title" content="博客创建教学">
-<meta property="og:url" content="http://yoursite.com/2017/03/23/阿历克斯爱猫咪/index.html">
+<meta property="og:title" content="C++学习笔记(2)">
+<meta property="og:url" content="http://yoursite.com/2017/04/04/码农的奋起反抗/index.html">
 <meta property="og:site_name" content="白胡椒豚骨面">
-<meta property="og:description" content="地址： https://zhangslob.github.io/">
-<meta property="og:updated_time" content="2017-04-03T15:58:02.772Z">
+<meta property="og:description" content="码农的奋起反抗C++学习笔记(2)笔记多写一份比较好找？Alex是这么觉得的。看来要写很多分了。
+ 附上吃糖的乐芙兰殿下！=w=">
+<meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197288165,241357084&fm=23&gp=0.jpg">
+<meta property="og:updated_time" content="2017-04-03T18:13:07.742Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="博客创建教学">
-<meta name="twitter:description" content="地址： https://zhangslob.github.io/">
+<meta name="twitter:title" content="C++学习笔记(2)">
+<meta name="twitter:description" content="码农的奋起反抗C++学习笔记(2)笔记多写一份比较好找？Alex是这么觉得的。看来要写很多分了。
+ 附上吃糖的乐芙兰殿下！=w=">
+<meta name="twitter:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197288165,241357084&fm=23&gp=0.jpg">
 
 
 
@@ -124,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/03/23/阿历克斯爱猫咪/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/04/码农的奋起反抗/"/>
 
 
 
 
 
-  <title> 博客创建教学 | 白胡椒豚骨面 </title>
+  <title> C++学习笔记(2) | 白胡椒豚骨面 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
@@ -249,7 +254,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/23/阿历克斯爱猫咪/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/04/码农的奋起反抗/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="AlexLoveNeko">
@@ -270,7 +275,7 @@
             
             
               
-                博客创建教学
+                C++学习笔记(2)
               
             
           </h1>
@@ -285,8 +290,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-03-23T17:42:09+08:00">
-                2017-03-23
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-04T00:40:33+08:00">
+                2017-04-04
               </time>
             
 
@@ -321,7 +326,53 @@
       
 
       
-        <p>地址： <a href="https://zhangslob.github.io/" target="_blank" rel="external">https://zhangslob.github.io/</a></p>
+        <h1 id="码农的奋起反抗"><a href="#码农的奋起反抗" class="headerlink" title="码农的奋起反抗"></a>码农的奋起反抗</h1><h2 id="C-学习笔记-2"><a href="#C-学习笔记-2" class="headerlink" title="C++学习笔记(2)"></a>C++学习笔记(2)</h2><p>笔记多写一份比较好找？Alex是这么觉得的。看来要写很多分了。</p>
+<p> <strong>附上吃糖的乐芙兰殿下！=w=</strong></p>
+<p> <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197288165,241357084&amp;fm=23&amp;gp=0.jpg" alt="image"></p>
+  <a id="more"></a>
+<p>  ————————————————————————————————————、</p>
+<blockquote>
+<h2 id="一-继承与派生"><a href="#一-继承与派生" class="headerlink" title="一.继承与派生"></a>一.继承与派生</h2><h4 id="1-派生类基本格式"><a href="#1-派生类基本格式" class="headerlink" title="1.派生类基本格式"></a>1.派生类基本格式</h4><pre><code>-
+声明派生类的一般形式为
+class 派生类名: ［继承方式］ 基类名
+{
+    派生类新增加的成员
+} ;
+</code></pre></blockquote>
+<hr>
+<pre><code>//举个栗子
+    class Student
+    {   
+        int num;
+        char name[30];
+        char sex;
+    }
+
+        class Student1: public Student       //声明基类是Student
+    {
+        public:
+        void display_1( )                          //新增加的成员函数
+    {
+        cout&lt;&lt;″age: ″&lt;&lt;age&lt;&lt;endl;
+        cout&lt;&lt;″address: ″&lt;&lt;addr&lt;&lt;endl;
+
+    }
+        private:
+        int age;             //新增加的数据成员
+        string addr;     //新增加的数据成员
+    };
+</code></pre><blockquote>
+<h4 id="2-派生类基本性质"><a href="#2-派生类基本性质" class="headerlink" title="2.派生类基本性质"></a>2.派生类基本性质</h4><pre><code>在基类的访问属性        继承方式            在派生类中的访问属性
+private（私有）        public（公用）        不可访问
+private（私有）        private（私有）        不可访问
+private（私有）        protected（保护）        不可访问
+public（公用）        public（公用）        public（公用）
+public（公用）        private（私有）        private（私有）
+public（公用）        protected（保护）        protected（保护）
+protected（保护）    public（公用）        protected（保护）
+protected（保护）    private（私有）        private（私有）
+protected（保护）    protected（保护）        protected（保护）
+</code></pre><h4 id="3-派生类中的构造函数与析构函数"><a href="#3-派生类中的构造函数与析构函数" class="headerlink" title="3.派生类中的构造函数与析构函数"></a>3.派生类中的构造函数与析构函数</h4></blockquote>
 
       
     </div>
@@ -358,8 +409,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/23/hello-world/" rel="next" title="向导">
-                <i class="fa fa-chevron-left"></i> 向导
+              <a href="/2017/03/31/码农底层的挣扎/" rel="next" title="C++笔记">
+                <i class="fa fa-chevron-left"></i> C++笔记
               </a>
             
           </div>
@@ -367,10 +418,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/03/31/码农底层的挣扎/" rel="prev" title="C++笔记">
-                C++笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -417,8 +464,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -462,6 +518,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#码农的奋起反抗"><span class="nav-number">1.</span> <span class="nav-text">码农的奋起反抗</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-学习笔记-2"><span class="nav-number">1.1.</span> <span class="nav-text">C++学习笔记(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-继承与派生"><span class="nav-number">1.2.</span> <span class="nav-text">一.继承与派生</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-派生类基本格式"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1.派生类基本格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-派生类基本性质"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2.派生类基本性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-派生类中的构造函数与析构函数"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">3.派生类中的构造函数与析构函数</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
