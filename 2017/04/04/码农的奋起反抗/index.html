@@ -96,7 +96,7 @@
 <meta property="og:description" content="码农的奋起反抗C++学习笔记(2)笔记多写一份比较好找？Alex是这么觉得的。看来要写很多分了。
  附上吃糖的乐芙兰殿下！=w=">
 <meta property="og:image" content="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=197288165,241357084&fm=23&gp=0.jpg">
-<meta property="og:updated_time" content="2017-04-03T18:13:07.742Z">
+<meta property="og:updated_time" content="2017-04-10T14:41:45.809Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记(2)">
 <meta name="twitter:description" content="码农的奋起反抗C++学习笔记(2)笔记多写一份比较好找？Alex是这么觉得的。看来要写很多分了。
@@ -201,7 +201,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
-            Startseite
+            Accueil
           </a>
         </li>
       
@@ -211,7 +211,7 @@
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
-            Archiv
+            Archives
           </a>
         </li>
       
@@ -288,7 +288,7 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Posté le</span>
               
               <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-04T00:40:33+08:00">
                 2017-04-04
@@ -372,7 +372,163 @@ public（公用）        protected（保护）        protected（保护）
 protected（保护）    public（公用）        protected（保护）
 protected（保护）    private（私有）        private（私有）
 protected（保护）    protected（保护）        protected（保护）
-</code></pre><h4 id="3-派生类中的构造函数与析构函数"><a href="#3-派生类中的构造函数与析构函数" class="headerlink" title="3.派生类中的构造函数与析构函数"></a>3.派生类中的构造函数与析构函数</h4></blockquote>
+</code></pre><h4 id="3-派生类中的构造函数"><a href="#3-派生类中的构造函数" class="headerlink" title="3.派生类中的构造函数"></a>3.派生类中的构造函数</h4><pre><code>    #pragma once
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+using namespace std;
+</code></pre></blockquote>
+<pre><code>class Person
+{
+public:
+    Person() {};    
+    //为了避免继承时没有默认构造函数可用，此处放置空构造函数
+    Person(string n, string s, int a)
+    {Name = n, Sex = s, Age = a;}
+
+protected:
+    string Name;
+    string Sex;
+    int Age;
+};
+class Teacher :virtual public Person
+{
+public:
+    Teacher() {};
+    friend void Display(Teacher &amp;tea);
+    Teacher(string n, string s, int a, long num, string t, long w) :Person(n, s, a) 
+    {
+    Number = num, Teach = t; Wage = w;
+}
+
+void display()
+{
+    cout &lt;&lt; &quot;姓名：&quot; &lt;&lt; Name &lt;&lt; endl &lt;&lt; &quot;性别：&quot; &lt;&lt; Sex &lt;&lt; endl &lt;&lt; &quot;年龄：&quot; &lt;&lt; Age \
+        &lt;&lt; endl &lt;&lt; &quot;工号:&quot; &lt;&lt; Number &lt;&lt; endl &lt;&lt; &quot;工资:&quot; &lt;&lt; Wage &lt;&lt; endl &lt;&lt; &quot;职称：&quot; \
+        &lt;&lt; Teach &lt;&lt; endl;
+}
+protected:
+    long Number;
+    long Wage;
+    string Teach;
+};
+</code></pre><blockquote>
+<h4 id="4-继承与组合"><a href="#4-继承与组合" class="headerlink" title="4.继承与组合"></a>4.继承与组合</h4><pre><code>class Teacher//教师类
+{  
+public:
+private:
+int num;
+string name;
+char sex;
+};
+class BirthDate //生日类
+{ 
+public:
+private:
+int year;
+int month;
+int day;
+};
+class Professor:public Teacher //教授类
+{
+public:
+private:
+BirthDate birthday;/BirthDate类的对象作为数据成员
+};
+</code></pre><h2 id="多态性与虚函数"><a href="#多态性与虚函数" class="headerlink" title="多态性与虚函数"></a>多态性与虚函数</h2><h4 id="1-例题"><a href="#1-例题" class="headerlink" title="1.例题"></a>1.例题</h4><pre><code>编写一个程序，定义抽象基类Shape，由它派生出5个派生类： Circle(圆形)Square(正方形)Rectangle(矩形)
+Trapezoid(梯形)Triangle(三角形)。
+用虚函数分别计算几种图形面积，并求它们之和。
+要求用基类指针数组，使它每一个元素指向一个派生类对象。 
+</code></pre><hr>
+<pre><code>#include &lt;iostream&gt; 
+#include &lt;iomanip&gt; 
+using namespace std; 
+class Shape 
+{ 
+public: 
+    virtual double area() const=0; 
+}; 
+</code></pre></blockquote>
+<pre><code>class Circle:public Shape 
+{ 
+public: 
+Circle(double r):radius(r){} 
+virtual double area() const{return 3.14159*radius*radius;} 
+protected: 
+double radius; 
+}; 
+
+
+class Rectangle:public Shape 
+{ 
+public: 
+Rectangle(double r,double l):width(r),height(l){} 
+virtual double area() const{return width*height;} 
+protected: 
+    double width; 
+    double height; 
+}; 
+
+
+class Triangle:public Shape 
+{ 
+public: 
+Triangle(double r,double l):width(r),heigth(l){} 
+virtual double area() const{return 0.5*width*heigth;} 
+protected: 
+    double width; 
+    double heigth; 
+}; 
+
+
+class Trapezoid:public Shape 
+{ 
+public: 
+Trapezoid(double r,double l,double k):top(r),bottom(l),height(k){} 
+virtual double area() const{return 0.5*(top+bottom)*height;} 
+protected: 
+    double top; 
+    double bottom; 
+    double height; 
+}; 
+
+
+class Square:public Shape 
+{ 
+public: 
+Square(double r):side(r){} 
+virtual double area() const{return side*side;} 
+protected: 
+    double side; 
+}; 
+
+int main() 
+{ 
+    float r,a,b,w1,w2,w,h; 
+    cout&lt;&lt;fixed&lt;&lt;setprecision(2); 
+    cin&gt;&gt;r; 
+    Circle circle(r); 
+    cin&gt;&gt;a; 
+    Square square(a); 
+    cin&gt;&gt;a&gt;&gt;b; 
+    Rectangle rectangle(a,b); 
+    cin&gt;&gt;w1&gt;&gt;w2&gt;&gt;h; 
+    Trapezoid trapezoid(w1,w1,h); 
+    cin&gt;&gt;w&gt;&gt;h; 
+    Triangle triangle(w,h); 
+    Shape *pt[5]= {&amp;circle,&amp;square,&amp;rectangle,&amp;trapezoid,&amp;triangle}; 
+    double areas=0.0; 
+    for(int i=0; i&lt;5; i++) 
+        areas=areas+pt[i]-&gt;area(); 
+    cout&lt;&lt;&quot;total of all areas=&quot;&lt;&lt;areas&lt;&lt;endl; 
+    return 0; 
+} 
+</code></pre><blockquote>
+<h4 id="2-虚函数"><a href="#2-虚函数" class="headerlink" title="2.虚函数"></a>2.虚函数</h4><p>使用虚函数时，有两点要注意:<br>(1)虚函数只能用于类的继承层次结构中，只能用virtual声明类的成员函数，而不能将类外的普通函数声明为虚函数。<br>(2) 一个成员函数被声明为虚函数后，在同一类族中的类就不能再定义一个非virtual的但与该虚函数具有相同的参数(包括个数和类型)和函数返回值类型的同名函数。<br>根据什么考虑是否把一个成员函数声明为虚函数呢？主要考虑以下几点:<br>—-首先看成员函数所在的类是否会作为基类。然后看成员函数在类的继承后有无可能被更改功能，如果希望更改其功能的，一般应该将它声明为虚函数。<br>—-如果成员函数在类被继承后功能不需修改，或派生类用不到该函数，则不要把它声明为虚函数。不要仅仅考虑到要作为基类而把类中的所有成员函数都声明为虚函数。<br>应考虑对成员函数的调用是通过对象名还是通过基类指针或引用去访问，如果是通过基类指针或引用去访问的，则应当声明为虚函数。<br>—-在定义虚函数时，并不定义其函数体，即函数体是空的。它的作用只是定义了一个虚函数名，具体功能留给派生类去添加。  </p>
+<h2 id="—-当一个类带有虚函数时，编译系统会为该类构造一个虚函数表-virtual-function-table-，它是一个指针数组，存放每个虚函数的入口地址。"><a href="#—-当一个类带有虚函数时，编译系统会为该类构造一个虚函数表-virtual-function-table-，它是一个指针数组，存放每个虚函数的入口地址。" class="headerlink" title="—-当一个类带有虚函数时，编译系统会为该类构造一个虚函数表(virtual function table)，它是一个指针数组，存放每个虚函数的入口地址。"></a>—-当一个类带有虚函数时，编译系统会为该类构造一个虚函数表(virtual function table)，它是一个指针数组，存放每个虚函数的入口地址。</h2><h6 id="纯虚函数"><a href="#纯虚函数" class="headerlink" title="纯虚函数"></a>纯虚函数</h6><pre><code>//eg.
+virtual float area( ) const =0;  //纯虚函数
+</code></pre><p>纯虚函数是在声明虚函数时被“初始化”为0的函数。声明纯虚函数的一般形式是：<br>virtual 函数类型 函数名 (参数表列) =0;<br>纯虚函数只有函数名字而不具备函数功能，不能被调用。它通知编译系统:   “在这里声明一个虚函数，留待派生类中定义”。在派生类中对此函数提供定义后，它才能具备函数的功能，可被调用。<br>如果在一个类中声明了纯虚函数，而在其派生类中没有对该函数定义，则该虚函数在派生类中仍然为纯虚函数。  </p>
+<h6 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h6><p>不用来定义对象而只作为一种基本类型用作继承的类，称为抽象类(abstract class)，由于它常用作基类，通常称为抽象基类(abstract base class)。<br>凡是包含纯虚函数的类都是抽象类，包含纯虚函数的类是无法建立对象的。抽象类的作用是作为一个类族的共同基类，或者说，为一个类族提供一个公共接口。<br>一个类层次结构中当然也可不包含任何抽象类，每一层次的类都是实际可用的，可以用来建立对象的。<br>但是，许多好的面向对象的系统，其层次结构的顶部是一个抽象类，甚至顶部有好几层都是抽象类。<br>如果在抽象类所派生出的新类中对基类的所有纯虚函数进行了定义，那么这些函数就被赋予了功能，可以被调用。这个派生类就不是抽象类，而是可以用来定义对象的具体类<br>如果在派生类中没有对所有纯虚函数进行定义，则此派生类仍然是抽象类，不能用来定义对象。<br>虽然抽象类不能定义对象(或者说抽象类不能实例化)，但是可以定义指向抽象类数据的指针变量。<br>当派生类成为具体类之后，就可以用这种指针指向派生类对象，然后通过该指针调用虚函数，实现多态性的操作。<br>使得：现在写的程序调用以后写的程序，成为可能！<br>以前写的程序可以被将来写的程序调用不足为奇（继承，向前兼容），但是多态性实现了：将来写的程序可以被现在的程序所调用，程序的可扩充性大大增强！  </p>
+</blockquote>
 
       
     </div>
@@ -466,10 +622,10 @@ protected（保护）    protected（保护）        protected（保护）
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            Inhaltsverzeichnis
+            Table Des Matières
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
-            Übersicht
+            Ensemble
           </li>
         </ul>
       
@@ -489,8 +645,8 @@ protected（保护）    protected（保护）        protected（保护）
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">4</span>
-                <span class="site-state-item-name">Artikel</span>
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">articles</span>
               </a>
             </div>
           
@@ -528,7 +684,7 @@ protected（保护）    protected（保护）        protected（保护）
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#码农的奋起反抗"><span class="nav-number">1.</span> <span class="nav-text">码农的奋起反抗</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-学习笔记-2"><span class="nav-number">1.1.</span> <span class="nav-text">C++学习笔记(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-继承与派生"><span class="nav-number">1.2.</span> <span class="nav-text">一.继承与派生</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-派生类基本格式"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1.派生类基本格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-派生类基本性质"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2.派生类基本性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-派生类中的构造函数与析构函数"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">3.派生类中的构造函数与析构函数</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#码农的奋起反抗"><span class="nav-number">1.</span> <span class="nav-text">码农的奋起反抗</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-学习笔记-2"><span class="nav-number">1.1.</span> <span class="nav-text">C++学习笔记(2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-继承与派生"><span class="nav-number">1.2.</span> <span class="nav-text">一.继承与派生</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-派生类基本格式"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">1.派生类基本格式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-派生类基本性质"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">2.派生类基本性质</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-派生类中的构造函数"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">3.派生类中的构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-继承与组合"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">4.继承与组合</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多态性与虚函数"><span class="nav-number">1.3.</span> <span class="nav-text">多态性与虚函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-例题"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">1.例题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-虚函数"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">2.虚函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#—-当一个类带有虚函数时，编译系统会为该类构造一个虚函数表-virtual-function-table-，它是一个指针数组，存放每个虚函数的入口地址。"><span class="nav-number">1.4.</span> <span class="nav-text">—-当一个类带有虚函数时，编译系统会为该类构造一个虚函数表(virtual function table)，它是一个指针数组，存放每个虚函数的入口地址。</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#纯虚函数"><span class="nav-number">1.4.0.0.0.1.</span> <span class="nav-text">纯虚函数</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#抽象类"><span class="nav-number">1.4.0.0.0.2.</span> <span class="nav-text">抽象类</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -560,11 +716,11 @@ protected（保护）    protected（保护）        protected（保护）
 
 
 <div class="powered-by">
-  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+  Powered by <a class="theme-link" href="https://hexo.io">Hexo</a>
 </div>
 
 <div class="theme-info">
-  Theme -
+  Thème -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
     NexT.Muse
   </a>
