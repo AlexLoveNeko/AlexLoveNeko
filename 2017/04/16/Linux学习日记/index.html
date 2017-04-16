@@ -1,0 +1,699 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.0" />
+
+
+
+
+
+
+<meta name="description" content="Linux基础学习
+开始你的表演
+ &amp;gt;破音姬压场&amp;lt;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux学习日记">
+<meta property="og:url" content="http://yoursite.com/2017/04/16/Linux学习日记/index.html">
+<meta property="og:site_name" content="白胡椒豚骨面">
+<meta property="og:description" content="Linux基础学习
+开始你的表演
+ &amp;gt;破音姬压场&amp;lt;">
+<meta property="og:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492954719&di=29a8cc6730fc783e0f63154b6e4b0178&imgtype=jpg&er=1&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F980f4df94cd509afb8e575aaa9d283e0459defe7.jpg">
+<meta property="og:image" content="http://yoursite.com/搜狗截图20170416233809.png">
+<meta property="og:image" content="http://yoursite.com/搜狗截图20170416233841.png">
+<meta property="og:updated_time" content="2017-04-16T16:11:54.686Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Linux学习日记">
+<meta name="twitter:description" content="Linux基础学习
+开始你的表演
+ &amp;gt;破音姬压场&amp;lt;">
+<meta name="twitter:image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1492954719&di=29a8cc6730fc783e0f63154b6e4b0178&imgtype=jpg&er=1&src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F980f4df94cd509afb8e575aaa9d283e0459defe7.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/04/16/Linux学习日记/"/>
+
+
+
+
+
+  <title> Linux学习日记 | 白胡椒豚骨面 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">白胡椒豚骨面</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">AlexLoveNeko</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/04/16/Linux学习日记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="AlexLoveNeko">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="白胡椒豚骨面">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                Linux学习日记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-04-16T21:33:50+08:00">
+                2017-04-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Linux基础学习"><a href="#Linux基础学习" class="headerlink" title="Linux基础学习"></a>Linux基础学习</h1><blockquote>
+<h4 id="开始你的表演"><a href="#开始你的表演" class="headerlink" title="开始你的表演"></a>开始你的表演</h4></blockquote>
+<p> <strong>&gt;破音姬压场&lt;</strong></p>
+<p> <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1492954719&amp;di=29a8cc6730fc783e0f63154b6e4b0178&amp;imgtype=jpg&amp;er=1&amp;src=http%3A%2F%2Fi0.hdslb.com%2Fbfs%2Farchive%2F980f4df94cd509afb8e575aaa9d283e0459defe7.jpg" alt="image"></p>
+  <a id="more"></a>
+<p>  ————————————————————————————————————</p>
+<blockquote>
+<h2 id="一-基本命令"><a href="#一-基本命令" class="headerlink" title="一.基本命令"></a>一.基本命令</h2><p> —————————————————————————————————————</p>
+<h6 id="1-新建一个文件-touch是一个命令"><a href="#1-新建一个文件-touch是一个命令" class="headerlink" title="1.新建一个文件 //touch是一个命令"></a>1.新建一个文件 //touch是一个命令</h6><pre><code>touch &lt;filename&gt;
+</code></pre><h6 id="2-进入一个目录-cd是一个命令"><a href="#2-进入一个目录-cd是一个命令" class="headerlink" title="2.进入一个目录 //cd是一个命令"></a>2.进入一个目录 //cd是一个命令</h6><pre><code>cd /etc/
+</code></pre><h6 id="3-查看当前所在目录"><a href="#3-查看当前所在目录" class="headerlink" title="3.查看当前所在目录"></a>3.查看当前所在目录</h6><pre><code>pwd
+</code></pre><h6 id="4-ctrl"><a href="#4-ctrl" class="headerlink" title="4.ctrl+"></a>4.ctrl+</h6><pre><code>-
+ctrl+c //强制退出
+ctrl+d //键盘输入结束或退出终端
+ctrl+s //暂停当前程序，按任意键恢复运行
+ctrl+z //将当前程序放到后台运行，恢复到前台为命令fg
+ctrl+a //将光标移至行头，相当于Home键
+ctrl+e //将光标移至行尾，相当于End键
+ctrl+k //删除从光标所在位置到行末
+Alt+Backspace //向前删除一个单词
+Shift+PgUp //将终端显示向上滚动
+Shift+PgDn //将终端显示向下滚动
+</code></pre><h6 id="5-通配符-和"><a href="#5-通配符-和" class="headerlink" title="5.通配符*和?"></a>5.通配符*和?</h6><p> 忘记文件名时可以用这两个字符模糊补全。<br> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">*    //匹配0或多个字符</div><div class="line">?    //匹配任意一个字符</div><div class="line">[list]   //匹配list中的单一字符</div><div class="line">[!list]   //匹配除list字符中任一单一字符以外的字符</div><div class="line">[c1-c2]   //匹配c1-c2的任意单一字符 如[0-9],[a-z]</div><div class="line">&#123;string1,string2...&#125;  //匹配string1或string2（或更多）其一字符串</div><div class="line">&#123;c1..c2&#125;  //匹配c1-c2全部字符</div></pre></td></tr></table></figure></p>
+<h6 id="6-从命令行中获取帮助"><a href="#6-从命令行中获取帮助" class="headerlink" title="6.从命令行中获取帮助"></a>6.从命令行中获取帮助</h6><pre><code>man &lt;command_name&gt;
+</code></pre><h2 id="二-用户及文件权限管理"><a href="#二-用户及文件权限管理" class="headerlink" title="二.用户及文件权限管理"></a>二.用户及文件权限管理</h2><h6 id="1-查看用户"><a href="#1-查看用户" class="headerlink" title="1.查看用户"></a>1.查看用户</h6> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">who am i //查看伪终端的用户的用户名（通俗讲就是黑框框，pst/0,pst/1来编号）</div><div class="line">whoami //查看真终端用户的用户名（即是那七个使用 [Ctrl]+[Alt]+[F1]～[F7] 进行切换的 /dev/tty 设备）</div></pre></td></tr></table></figure>
+<h6 id="2-who"><a href="#2-who" class="headerlink" title="2.who+"></a>2.who+</h6> <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"> -a	//打印能打印的全部  </div><div class="line">-d	//打印死掉的进程  </div><div class="line">-m	//同am i,mom likes  </div><div class="line">-q      //打印当前登录用户数及用户名  </div><div class="line">-u	//打印当前登录用户登录信息  </div><div class="line">-r	//打印运行等级</div></pre></td></tr></table></figure>
+<h6 id="3-关于root权限"><a href="#3-关于root权限" class="headerlink" title="3.关于root权限"></a>3.关于root权限</h6><h6 id="root-权限，系统权限的一种，与-SYSTEM-权限可以理解成一个概念，但高于-Administrator-权限，root-是-Linux-和-UNIX-系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到-root-权限，用-Windows-的方法理解也就是将自己的非法帐户添加到-Administrators-用户组。更比如安卓操作系统中（基于-Linux-内核）获得-root-权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作。我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要-root-权限，这里就要用到-sudo-这个命令了。不过使用这个命令有两个大前提，一是你要知道当前登录用户的密码，二是当前用户必须在-sudo-用户组。shiyanlou-用户也属于-sudo-用户组（稍后会介绍如何查看和添加用户组）。"><a href="#root-权限，系统权限的一种，与-SYSTEM-权限可以理解成一个概念，但高于-Administrator-权限，root-是-Linux-和-UNIX-系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到-root-权限，用-Windows-的方法理解也就是将自己的非法帐户添加到-Administrators-用户组。更比如安卓操作系统中（基于-Linux-内核）获得-root-权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作。我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要-root-权限，这里就要用到-sudo-这个命令了。不过使用这个命令有两个大前提，一是你要知道当前登录用户的密码，二是当前用户必须在-sudo-用户组。shiyanlou-用户也属于-sudo-用户组（稍后会介绍如何查看和添加用户组）。" class="headerlink" title="root 权限，系统权限的一种，与 SYSTEM 权限可以理解成一个概念，但高于 Administrator 权限，root 是 Linux 和 UNIX 系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到 root 权限，用 Windows 的方法理解也就是将自己的非法帐户添加到 Administrators 用户组。更比如安卓操作系统中（基于 Linux 内核）获得 root 权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作。我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要 root 权限，这里就要用到 sudo 这个命令了。不过使用这个命令有两个大前提，一是你要知道当前登录用户的密码，二是当前用户必须在 sudo 用户组。shiyanlou 用户也属于 sudo 用户组（稍后会介绍如何查看和添加用户组）。"></a>root 权限，系统权限的一种，与 SYSTEM 权限可以理解成一个概念，但高于 Administrator 权限，root 是 Linux 和 UNIX 系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到 root 权限，用 Windows 的方法理解也就是将自己的非法帐户添加到 Administrators 用户组。更比如安卓操作系统中（基于 Linux 内核）获得 root 权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作。我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要 root 权限，这里就要用到 sudo 这个命令了。不过使用这个命令有两个大前提，一是你要知道当前登录用户的密码，二是当前用户必须在 sudo 用户组。shiyanlou 用户也属于 sudo 用户组（稍后会介绍如何查看和添加用户组）。</h6><h6 id="4-su-su-和sudo"><a href="#4-su-su-和sudo" class="headerlink" title="4.su,su -和sudo"></a>4.su,su -和sudo</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">su &lt;user&gt; //可以切换到用户 user，执行时需要输入目标用户的密码     </div><div class="line">sudo &lt;cmd&gt; //可以以特权级别运行 cmd 命令，需要当前用户属于sudo 组，且需要输入当前用户的密码。</div><div class="line">su - &lt;user&gt; //命令也是切换用户，同时环境变量也会跟着改变成目标用户的环境变量。</div></pre></td></tr></table></figure>
+<h6 id="5-新建一个用户"><a href="#5-新建一个用户" class="headerlink" title="5.新建一个用户"></a>5.新建一个用户</h6><pre><code>$ sudo adduser &lt;username&gt;
+//这个命令不但可以添加用户到系统，同时也会默认为新用户创建 home 目录
+</code></pre><h6 id="6-用户组"><a href="#6-用户组" class="headerlink" title="6.用户组"></a>6.用户组</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">//查看你的用户组</div><div class="line">法1.使用groups命令</div><div class="line">$ groups &lt;username&gt; </div><div class="line">//输出：用户名+所属用户组名</div><div class="line">/*每次新建用户如果不指定用户组的话，默认会自动创建一个</div><div class="line">用户名相同的用户组（差不多就相当于家长的意思，或者说是</div><div class="line">老总）。默认情况下在 sudo 用户组里的可以使用 sudo 命令</div><div class="line">获得 root 权限。*/</div><div class="line">法2.查看 /etc/group 文件</div><div class="line">$ cat /etc/group | sort</div><div class="line">只看你想要的结果:$ cat /etc/group | grep -E &quot;...&quot;</div></pre></td></tr></table></figure>
+<h6 id="7-将其它用户加入-sudo-用户组"><a href="#7-将其它用户加入-sudo-用户组" class="headerlink" title="7.将其它用户加入 sudo 用户组"></a>7.将其它用户加入 sudo 用户组</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"># 若shiyanlou是sudo用户组的，lilei为普通用户</div><div class="line">$ su shiyanlou # 此处需要输入shiyanlou用户密码，可以点击右侧工具栏中的“SSH直连”查看</div><div class="line">$ groups lilei</div><div class="line">$ sudo usermod -G sudo lilei</div><div class="line">$ groups lilei</div></pre></td></tr></table></figure>
+<h6 id="8-删除用户"><a href="#8-删除用户" class="headerlink" title="8.删除用户"></a>8.删除用户</h6><pre><code>$ sudo deluser &lt;username&gt; --remove-home
+</code></pre><h6 id="9-关于ls命令（列出当前目录下所有文件）"><a href="#9-关于ls命令（列出当前目录下所有文件）" class="headerlink" title="9.关于ls命令（列出当前目录下所有文件）"></a>9.关于ls命令（列出当前目录下所有文件）</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ls -l // 长列表模式，列出信息较多</div><div class="line">ls -A /*显示除了 .（当前目录）和..（上一级目录）以及隐藏文件之外</div><div class="line">的所有文件（Linux 下以 . 开头的文件为隐藏文件）。*/</div><div class="line">ls -Al //当然，你可以同时使用 -A 和 -l 参数</div><div class="line">ls -a //不忽略前面带.的文件，目录</div><div class="line">ls -dl &lt;目录名&gt;//查看某一个目录的完整属性，而不是显示目录里面的文件属性</div><div class="line">ls -AsSh /*显示所有文件大小，并以普通人类能看懂的方式呈现</div><div class="line">其中小 s 为显示文件大小，大S为按文件大小排序，</div><div class="line">若需要知道如何按其它方式排序，请使用“man”命令查询*/</div></pre></td></tr></table></figure>
+<h6 id="10-查看文件权限"><a href="#10-查看文件权限" class="headerlink" title="10.查看文件权限"></a>10.查看文件权限</h6><p><img src="搜狗截图20170416233809.png" alt="image"><br><img src="搜狗截图20170416233841.png" alt="image"></p>
+<h6 id="读权限，表示你可以使用-cat-之类的命令来读取某个文件的内容；"><a href="#读权限，表示你可以使用-cat-之类的命令来读取某个文件的内容；" class="headerlink" title="读权限，表示你可以使用 cat 之类的命令来读取某个文件的内容；"></a>读权限，表示你可以使用 cat <filename>之类的命令来读取某个文件的内容；</filename></h6><h6 id="写权限，表示你可以编辑和修改某个文件"><a href="#写权限，表示你可以编辑和修改某个文件" class="headerlink" title="写权限，表示你可以编辑和修改某个文件"></a>写权限，表示你可以编辑和修改某个文件</h6><h6 id="执行权限，通常指可以运行的二进制程序文件或者脚本文件，如同-Windows-上的-exe-后缀的文件，不过-Linux上不是通过文件后缀名来区分文件的类型。你需要注意的一点是，一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件，这是因为目录文件实际保存着该目录里面的文件的列表等信息。"><a href="#执行权限，通常指可以运行的二进制程序文件或者脚本文件，如同-Windows-上的-exe-后缀的文件，不过-Linux上不是通过文件后缀名来区分文件的类型。你需要注意的一点是，一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件，这是因为目录文件实际保存着该目录里面的文件的列表等信息。" class="headerlink" title="执行权限，通常指可以运行的二进制程序文件或者脚本文件，如同 Windows 上的 exe 后缀的文件，不过 Linux上不是通过文件后缀名来区分文件的类型。你需要注意的一点是，一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件，这是因为目录文件实际保存着该目录里面的文件的列表等信息。"></a>执行权限，通常指可以运行的二进制程序文件或者脚本文件，如同 Windows 上的 exe 后缀的文件，不过 Linux上不是通过文件后缀名来区分文件的类型。你需要注意的一点是，一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件，这是因为目录文件实际保存着该目录里面的文件的列表等信息。</h6><h6 id="所有者权限，这一点相信你应该明白了，至于所属用户组权限，是指你所在的用户组中的所有其它用户对于该文件的权限，比如，你有一个艾派德，那么这个用户组权限就决定了你的兄弟姐妹有没有权限使用它破坏它和占有它。"><a href="#所有者权限，这一点相信你应该明白了，至于所属用户组权限，是指你所在的用户组中的所有其它用户对于该文件的权限，比如，你有一个艾派德，那么这个用户组权限就决定了你的兄弟姐妹有没有权限使用它破坏它和占有它。" class="headerlink" title="所有者权限，这一点相信你应该明白了，至于所属用户组权限，是指你所在的用户组中的所有其它用户对于该文件的权限，比如，你有一个艾派德，那么这个用户组权限就决定了你的兄弟姐妹有没有权限使用它破坏它和占有它。"></a>所有者权限，这一点相信你应该明白了，至于所属用户组权限，是指你所在的用户组中的所有其它用户对于该文件的权限，比如，你有一个艾派德，那么这个用户组权限就决定了你的兄弟姐妹有没有权限使用它破坏它和占有它。</h6><h6 id="11-变更文件所有者"><a href="#11-变更文件所有者" class="headerlink" title="11.变更文件所有者"></a>11.变更文件所有者</h6><p>若文件file属于lilei，现改为shiyanlou<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ cd /home/lilei</div><div class="line">$ ls file</div><div class="line">$ sudo chown shiyanlou file</div><div class="line">$ cp file /home/shiyanlou</div></pre></td></tr></table></figure></p>
+<h6 id="12-修改文件权限"><a href="#12-修改文件权限" class="headerlink" title="12.修改文件权限"></a>12.修改文件权限</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">方式一：二进制数字表示</div><div class="line">/*每个文件的三组权限（拥有者，所属用户组，其他用户，</div><div class="line">记住这个顺序是一定的）对应一个 &quot; rwx &quot;，也就是 “ 7 ”*/</div><div class="line">$ echo &quot;echo \&quot;hello shiyanlou\&quot;&quot; &gt; iphone6//将文件iphone6改为仅自己可用</div><div class="line">$ chmod 700 iphone6//修改权限</div><div class="line">方式二：加减赋值操作</div><div class="line">//完成上述相同的效果，你可以：</div><div class="line">$ chmod go-rw iphone6</div><div class="line">//g、o 还有 u 分别表示 group、others 和 user，+ 和 - 分别表示增加和去掉相应的权限。</div></pre></td></tr></table></figure>
+<h6 id="13-adduser-和-useradd-的区别是什么？"><a href="#13-adduser-和-useradd-的区别是什么？" class="headerlink" title="13.adduser 和 useradd 的区别是什么？"></a>13.adduser 和 useradd 的区别是什么？</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">答：useradd 只创建用户，创建完了用 passwd lilei 去设置新用户的密码。adduser</div><div class="line">会创建用户，创建目录，创建密码（提示你设置），做这一系列的操作。其实useradd</div><div class="line">、userdel 这类操作更像是一种命令，执行完了就返回。而adduser更像是一种程序，</div><div class="line">需要你输入、确定等一系列操作。</div><div class="line"></div><div class="line">Linux 还有一些关于隐藏权限和特殊权限的内容，想全面了解Linux权限管理这部分内</div><div class="line">容的用户可以通过其它方式学习。</div></pre></td></tr></table></figure></blockquote>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/04/04/码农的奋起反抗/" rel="next" title="C++学习笔记(2)">
+                <i class="fa fa-chevron-left"></i> C++学习笔记(2)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="AlexLoveNeko" />
+          <p class="site-author-name" itemprop="name">AlexLoveNeko</p>
+           
+              <p class="site-description motion-element" itemprop="description">庄霖大人的博客</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">4</span>
+                <span class="site-state-item-name">Artikel</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux基础学习"><span class="nav-number">1.</span> <span class="nav-text">Linux基础学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#开始你的表演"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">开始你的表演</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一-基本命令"><span class="nav-number">1.1.</span> <span class="nav-text">一.基本命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-新建一个文件-touch是一个命令"><span class="nav-number">1.1.0.0.0.1.</span> <span class="nav-text">1.新建一个文件 //touch是一个命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-进入一个目录-cd是一个命令"><span class="nav-number">1.1.0.0.0.2.</span> <span class="nav-text">2.进入一个目录 //cd是一个命令</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-查看当前所在目录"><span class="nav-number">1.1.0.0.0.3.</span> <span class="nav-text">3.查看当前所在目录</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-ctrl"><span class="nav-number">1.1.0.0.0.4.</span> <span class="nav-text">4.ctrl+</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-通配符-和"><span class="nav-number">1.1.0.0.0.5.</span> <span class="nav-text">5.通配符*和?</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-从命令行中获取帮助"><span class="nav-number">1.1.0.0.0.6.</span> <span class="nav-text">6.从命令行中获取帮助</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二-用户及文件权限管理"><span class="nav-number">1.2.</span> <span class="nav-text">二.用户及文件权限管理</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#1-查看用户"><span class="nav-number">1.2.0.0.0.1.</span> <span class="nav-text">1.查看用户</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#2-who"><span class="nav-number">1.2.0.0.0.2.</span> <span class="nav-text">2.who+</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#3-关于root权限"><span class="nav-number">1.2.0.0.0.3.</span> <span class="nav-text">3.关于root权限</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#root-权限，系统权限的一种，与-SYSTEM-权限可以理解成一个概念，但高于-Administrator-权限，root-是-Linux-和-UNIX-系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到-root-权限，用-Windows-的方法理解也就是将自己的非法帐户添加到-Administrators-用户组。更比如安卓操作系统中（基于-Linux-内核）获得-root-权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作。我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要-root-权限，这里就要用到-sudo-这个命令了。不过使用这个命令有两个大前提，一是你要知道当前登录用户的密码，二是当前用户必须在-sudo-用户组。shiyanlou-用户也属于-sudo-用户组（稍后会介绍如何查看和添加用户组）。"><span class="nav-number">1.2.0.0.0.4.</span> <span class="nav-text">root 权限，系统权限的一种，与 SYSTEM 权限可以理解成一个概念，但高于 Administrator 权限，root 是 Linux 和 UNIX 系统中的超级管理员用户帐户，该帐户拥有整个系统至高无上的权力，所有对象他都可以操作，所以很多黑客在入侵系统的时候，都要把权限提升到 root 权限，用 Windows 的方法理解也就是将自己的非法帐户添加到 Administrators 用户组。更比如安卓操作系统中（基于 Linux 内核）获得 root 权限之后就意味着已经获得了手机的最高权限，这时候你可以对手机中的任何文件（包括系统文件）执行所有增、删、改、查的操作。我们一般登录系统时都是以普通账户的身份登录的，要创建用户需要 root 权限，这里就要用到 sudo 这个命令了。不过使用这个命令有两个大前提，一是你要知道当前登录用户的密码，二是当前用户必须在 sudo 用户组。shiyanlou 用户也属于 sudo 用户组（稍后会介绍如何查看和添加用户组）。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#4-su-su-和sudo"><span class="nav-number">1.2.0.0.0.5.</span> <span class="nav-text">4.su,su -和sudo</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#5-新建一个用户"><span class="nav-number">1.2.0.0.0.6.</span> <span class="nav-text">5.新建一个用户</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#6-用户组"><span class="nav-number">1.2.0.0.0.7.</span> <span class="nav-text">6.用户组</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#7-将其它用户加入-sudo-用户组"><span class="nav-number">1.2.0.0.0.8.</span> <span class="nav-text">7.将其它用户加入 sudo 用户组</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#8-删除用户"><span class="nav-number">1.2.0.0.0.9.</span> <span class="nav-text">8.删除用户</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#9-关于ls命令（列出当前目录下所有文件）"><span class="nav-number">1.2.0.0.0.10.</span> <span class="nav-text">9.关于ls命令（列出当前目录下所有文件）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#10-查看文件权限"><span class="nav-number">1.2.0.0.0.11.</span> <span class="nav-text">10.查看文件权限</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#读权限，表示你可以使用-cat-之类的命令来读取某个文件的内容；"><span class="nav-number">1.2.0.0.0.12.</span> <span class="nav-text">读权限，表示你可以使用 cat 之类的命令来读取某个文件的内容；</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#写权限，表示你可以编辑和修改某个文件"><span class="nav-number">1.2.0.0.0.13.</span> <span class="nav-text">写权限，表示你可以编辑和修改某个文件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#执行权限，通常指可以运行的二进制程序文件或者脚本文件，如同-Windows-上的-exe-后缀的文件，不过-Linux上不是通过文件后缀名来区分文件的类型。你需要注意的一点是，一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件，这是因为目录文件实际保存着该目录里面的文件的列表等信息。"><span class="nav-number">1.2.0.0.0.14.</span> <span class="nav-text">执行权限，通常指可以运行的二进制程序文件或者脚本文件，如同 Windows 上的 exe 后缀的文件，不过 Linux上不是通过文件后缀名来区分文件的类型。你需要注意的一点是，一个目录同时具有读权限和执行权限才可以打开并查看内部文件，而一个目录要有写权限才允许在其中创建其它文件，这是因为目录文件实际保存着该目录里面的文件的列表等信息。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#所有者权限，这一点相信你应该明白了，至于所属用户组权限，是指你所在的用户组中的所有其它用户对于该文件的权限，比如，你有一个艾派德，那么这个用户组权限就决定了你的兄弟姐妹有没有权限使用它破坏它和占有它。"><span class="nav-number">1.2.0.0.0.15.</span> <span class="nav-text">所有者权限，这一点相信你应该明白了，至于所属用户组权限，是指你所在的用户组中的所有其它用户对于该文件的权限，比如，你有一个艾派德，那么这个用户组权限就决定了你的兄弟姐妹有没有权限使用它破坏它和占有它。</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#11-变更文件所有者"><span class="nav-number">1.2.0.0.0.16.</span> <span class="nav-text">11.变更文件所有者</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#12-修改文件权限"><span class="nav-number">1.2.0.0.0.17.</span> <span class="nav-text">12.修改文件权限</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#13-adduser-和-useradd-的区别是什么？"><span class="nav-number">1.2.0.0.0.18.</span> <span class="nav-text">13.adduser 和 useradd 的区别是什么？</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlexLoveNeko</span>
+</div>
+
+
+<div class="powered-by">
+  Erstellt mit  <a class="theme-link" href="https://hexo.io">Hexo</a>
+</div>
+
+<div class="theme-info">
+  Theme -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Muse
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.0"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
